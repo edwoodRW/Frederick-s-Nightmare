@@ -1,0 +1,15 @@
+﻿add_namespace = hannover
+
+#Setup Event
+country_event = {
+	id = hannover.1
+	title = hannover.1.t
+	desc = hannover.1.d
+	picture = GFX_report_event_research_lab
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hannover.1.o1
+	}
+}

@@ -1,0 +1,133 @@
+﻿add_namespace = japan
+
+#Setup Event
+country_event = {
+	id = japan.1
+	title = japan.1.t
+	desc = japan.1.d
+	picture = GFX_report_event_hideki_tojo
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.1.o1
+	}
+}
+
+#Chinese Civil War started by Japan
+country_event = {
+	id = japan.2
+	title = japan.2.t
+	desc = japan.2.d
+	picture = GFX_report_event_hideki_tojo
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.2.o1
+		add_war_support = -0.05
+		add_stability = -0.125
+		if = {
+			limit = { CHI = { has_government = fascism } }
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = neutrality
+				size = 0.55
+				capital = 608
+				states = {
+					621 608 614 615 616 622
+				}
+			}
+		}
+		if = {
+			limit = { CHI = { has_government = communism } }
+			start_civil_war = {
+				ruling_party = communism
+				ideology = neutrality
+				size = 0.55
+				capital = 608
+				states = {
+					621 608 614 615 616 622
+				}
+			}
+		}
+		random_other_country = {
+			limit = { original_tag = CHI has_government = neutrality }
+			set_equipment_fraction = 0.95
+			set_stability = 0.55
+			set_war_support = 0.35
+			save_event_target_as = kuomintang_china
+		}
+		event_target:kuomintang_china = {
+			add_named_threat = {
+				name = "Kuomintang Insurgency"
+				threat = 8
+			}
+			add_ideas = {
+				extensive_conscription
+				limited_exports
+				war_economy
+			}
+		}
+		JAP = {
+			add_to_faction = event_target:kuomintang_china
+			add_opinion_modifier = { 
+				target = event_target:kuomintang_china 
+				modifier = civil_war_support 
+			}
+			reverse_add_opinion_modifier = { 
+				target = event_target:kuomintang_china 
+				modifier = civil_war_support
+			}
+			add_opinion_modifier = { 
+				target = CHI 
+				modifier = civil_war_opposition 
+			}
+			reverse_add_opinion_modifier = { 
+				target = CHI 
+				modifier = civil_war_opposition 
+			}
+			add_timed_idea = { idea = international_military_programs days = 500 }
+		}
+		hidden_effect = {
+			news_event = { id = japan_news.1 hours = 4 }
+		}
+	}
+}
+
+#[From.GetName] wants to join the Imperial Alliance
+country_event = {
+	id = japan.4
+	title = japan.4.t
+	desc = japan.4.d
+	picture = GFX_report_event_paris
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = japan.4.a
+		add_to_faction = FROM
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = diplomatic_request_accepted
+			}
+		}
+		add_named_threat = {
+			threat = 0.5
+			name = "New Faction Member"
+		}
+		ai_chance = { base = 100 }
+	}
+	
+	option = {
+		name = japan.4.b
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = diplomatic_request_rejected
+			}
+		}
+		ai_chance = { base = 0 }
+	}
+}

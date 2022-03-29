@@ -1,0 +1,29 @@
+﻿add_namespace = naples_news
+
+#Accept Papal Authority
+news_event = {
+	id = naples_news.1
+	title = naples_news.1.t
+	desc = naples_news.1.d
+	picture = GFX_news_event_international_treaty6
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = naples_news.1.o1
+		trigger = { OR = { original_tag = NAP original_tag = PAP } }
+	}
+	option = {
+		name = naples_news.1.o2
+		trigger = { has_government = fascist }
+	}
+	option = {
+		name = naples_news.1.o3
+		trigger = { has_government = neutrality }
+	}
+	option = {
+		name = naples_news.1.o4
+		trigger = { OR = { has_government = communism has_government = democratic } }
+	}
+}

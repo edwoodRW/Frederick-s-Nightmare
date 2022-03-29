@@ -1,0 +1,15 @@
+﻿add_namespace = romania
+
+#Setup Event
+country_event = {
+	id = romania.1
+	title = romania.1.t
+	desc = romania.1.d
+	picture = GFX_report_event_albanian_partisans
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = romania.1.o1
+	}
+}

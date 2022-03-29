@@ -1,0 +1,15 @@
+﻿add_namespace = finland
+
+#Setup Event
+country_event = {
+	id = finland.1
+	title = finland.1.t
+	desc = finland.1.d
+	picture = GFX_report_event_winter_infantry
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = finland.1.o1
+	}
+}

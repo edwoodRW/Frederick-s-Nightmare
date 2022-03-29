@@ -1,0 +1,15 @@
+﻿add_namespace = poland
+
+#Setup Event
+country_event = {
+	id = poland.1
+	title = poland.1.t
+	desc = poland.1.d
+	picture = GFX_report_event_army_training2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = poland.1.o1
+	}
+}

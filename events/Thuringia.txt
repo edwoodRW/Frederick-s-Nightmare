@@ -1,0 +1,15 @@
+﻿add_namespace = thuringia
+
+#Setup Event
+country_event = {
+	id = thuringia.1
+	title = thuringia.1.t
+	desc = thuringia.1.d
+	picture = GFX_report_event_russian_judge
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = thuringia.1.o1
+	}
+}

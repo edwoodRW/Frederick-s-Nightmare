@@ -1,0 +1,15 @@
+﻿add_namespace = ireland
+
+#Setup Event
+country_event = {
+	id = ireland.1
+	title = ireland.1.t
+	desc = ireland.1.d
+	picture = GFX_report_event_international_meeting2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ireland.1.o1
+	}
+}

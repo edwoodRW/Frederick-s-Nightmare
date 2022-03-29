@@ -1,0 +1,15 @@
+﻿add_namespace = hyderabad
+
+#Setup Event
+country_event = {
+	id = hyderabad.1
+	title = hyderabad.1.t
+	desc = hyderabad.1.d
+	picture = GFX_report_event_army_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hyderabad.1.o1
+	}
+}

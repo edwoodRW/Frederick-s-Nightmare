@@ -1,0 +1,15 @@
+﻿add_namespace = serbia
+
+#Setup Event
+country_event = {
+	id = serbia.1
+	title = serbia.1.t
+	desc = serbia.1.d
+	picture = GFX_report_event_french_resistance
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = serbia.1.o1
+	}
+}

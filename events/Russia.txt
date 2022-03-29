@@ -1,0 +1,227 @@
+﻿add_namespace = russia
+
+#Setup Event
+country_event = {
+	id = russia.1
+	title = russia.1.t
+	desc = russia.1.d
+	picture = GFX_report_event_fascist_gathering
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = russia.2 days = 26 }
+		}
+	}
+	
+	option = {
+		name = russia.1.o1
+	}
+}
+
+#Death of Lenin
+country_event = {
+	id = russia.2
+	title = russia.2.t
+	desc = russia.2.d
+	picture = GFX_report_event_funeral
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = { 
+			country_event = { id = russia.3 days = 35 }
+			country_event = russia_news.1
+			create_country_leader = {
+				name = "Vyacheslav Molotov"
+				picture = "Vyacheslav_Molotov.dds"
+				ideology = marxism
+			}
+		}
+	}
+	
+	option = {
+		name = russia.2.o1
+	}
+}
+
+#Bolshevik Power Struggle
+country_event = {
+	id = russia.3
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		random_list = {
+			65 = { country_event = russia.4 }
+			25 = { country_event = russia.5 }
+			10 = { country_event = russia.6 }
+		}
+	}
+}
+##Molotov wins
+country_event = {
+	id = russia.4
+	title = russia.4.t
+	desc = russia.4.d
+	picture = GFX_report_event_german_soviet_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = russia.4.o1
+		effect_tooltip = {
+			create_country_leader = { name = "Vyacheslav Molotov" picture = "Vyacheslav_Molotov.dds" ideology = marxism }
+		}
+		news_event = russia_news.2
+	}
+}
+##Trotzky wins
+country_event = {
+	id = russia.5
+	title = russia.5.t
+	desc = russia.5.d
+	picture = GFX_report_event_trotzky_government
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = russia.5.o1
+		create_country_leader = {
+			name = "Leon Trotzky"
+			picture = "Leon_Trotzky.dds"
+			ideology = leninism
+		}
+		news_event = russia_news.3
+	}
+}
+##Stalin wins
+country_event = {
+	id = russia.6
+	title = russia.6.t
+	desc = russia.6.d
+	picture = GFX_report_event_stalin_government
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = russia.6.o1
+		create_country_leader = {
+			name = "Joseph Stalin"
+			picture = "Joseph_Stalin.dds"
+			ideology = stalinism
+		}
+		news_event = russia_news.4
+	}
+}
+
+#[From.GetName] wants to join the Holy Alliance
+country_event = {
+	id = russia.7
+	title = russia.7.t
+	desc = russia.7.d
+	picture = GFX_report_event_russian_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = russia.7.o1
+		add_to_faction = FROM
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = diplomatic_request_accepted
+			}
+		}
+		add_named_threat = {
+			threat = 0.5
+			name = "New Faction Member"
+		}
+		ai_chance = { base = 100 }
+	}
+	
+	option = {
+		name = russia.7.o2
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = diplomatic_request_rejected
+			}
+		}
+		ai_chance = { base = 0 }
+	}
+}
+
+#Tsar arrested
+country_event = {
+	id = russia.8
+	title = russia.8.t
+	desc = russia.8.d
+	picture = GFX_report_event_russian_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = russia.8.o1
+		every_country = {
+			limit = { is_subject_of = ROOT }
+			country_event = { id = russia.9 hours = 6 }
+		}
+	}
+}
+
+#Our chance to be free
+country_event = {
+	id = russia.9
+	title = russia.9.t
+	desc = russia.9.d
+	picture = GFX_report_event_russian_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = russia.9.o1
+		SOV = { end_puppet = ROOT }
+	}
+}
+
+#[From.GetName] wants to join the Comitern
+country_event = {
+	id = russia.10
+	title = russia.10.t
+	desc = russia.10.d
+	picture = GFX_report_event_paris
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = russia.10.o1
+		add_to_faction = FROM
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = diplomatic_request_accepted
+			}
+		}
+		add_named_threat = {
+			threat = 0.5
+			name = "New Faction Member"
+		}
+		ai_chance = { base = 100 }
+	}
+	
+	option = {
+		name = russia.10.o2
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = diplomatic_request_rejected
+			}
+		}
+		ai_chance = { base = 0 }
+	}
+}

@@ -1,0 +1,34 @@
+﻿add_namespace = california
+
+#Setup Event
+country_event = {
+	id = california.1
+	title = california.1.t
+	desc = california.1.d
+	picture = GFX_report_event_government6
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = { country_event = { id = california.2 days = 542 } }
+	}
+	
+	option = {
+		name = california.1.o1
+	}
+}
+
+#Orson Welles publishes "War of the Worlds"
+country_event = {
+	id = california.2
+	title = california.2.t
+	desc = california.2.d
+	picture = GFX_report_event_diplomatic_message
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = california.2.o1
+		add_political_power = 10
+	}
+}

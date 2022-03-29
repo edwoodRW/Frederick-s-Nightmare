@@ -1,0 +1,220 @@
+bookmarks = {
+	bookmark = {
+		name = "1936_NAME"
+		desc = "1936_DESC"
+		date = 1936.1.1.1
+		picture = "GFX_select_date_1936"
+		default_country = "FRA"
+		default = yes
+		
+		"AUS"={
+			history = "AUS_1936_DESC"
+			ideology = neutrality
+			ideas = {
+				vielvoelkerstaat
+			}
+			focuses = {
+				AUS_the_danube_confederation
+				AUS_befriend_the_ottoman_empire
+				AUS_eliminate_the_romanian_threat
+			}
+		}
+		"ENG"={
+			history = "ENG_1936_DESC"
+			ideology = democratic
+			ideas = {
+			}
+			focuses = {
+				ENG_settle_the_score
+				ENG_challenge_the_ottomans
+				ENG_pass_the_home_defense_act
+			}
+		}
+		"CHI"={
+			history = "CHI_1936_DESC"
+			ideology = fascism
+			ideas = {
+				lessons_of_humiliation
+			}
+			focuses = {
+				CHI_found_military_academies
+				CHI_avenge_the_humiliation
+				CHI_alliance_with_the_maoists
+			}
+		}
+		"FRA"={
+			history = "FRA_1936_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+				FRA_draft_a_republican_constitution
+				FRA_reassure_the_entente
+				FRA_call_the_grand_assembly
+			}
+		}
+		"TUR"={
+			history = "TUR_1936_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+				TUR_empower_the_reformers
+				TUR_favor_the_fundamentalists
+				TUR_forts_in_bulgaria
+			}
+		}
+		"PRS"={
+			history = "PRS_1936_DESC"
+			ideology = neutrality
+			ideas = {
+				prussian_militarism
+			}
+			focuses = {
+				PRS_support_the_lohmeyer_plan
+				PRS_the_unification_of_germany
+				PRS_equality_for_askaris
+			}
+		}
+		"SOV"={
+			history = "SOV_1936_DESC"
+			ideology = neutrality
+			ideas = {
+				bolshevik_insurgents2
+				orthodox_church_content
+			}
+			focuses = {
+				SOV_execute_the_tsar
+				SOV_create_the_yezhov_office
+				SOV_finish_the_tsar_line
+			}
+		}
+
+		"---"={
+			history = "OTHER_1936_DESC"
+		}
+		
+		"CAN"={
+			minor = yes
+			history = "CAN_1936_DESC"
+			ideology = democratic
+			ideas = {}
+			focuses = {}
+		}
+		"ITA"={
+			minor = yes
+			history = "ITA_1936_DESC"
+			ideology = communism
+			ideas = {
+				pci_divided
+				italian_monarchy_in_exile
+			}
+			focuses = {
+				ITA_support_the_national_bolsheviks
+				ITA_call_de_gasperi_into_office
+				ITA_further_centralizations_of_private_businesses
+			}
+		}
+		"JAP"={
+			minor = yes
+			history = "JAP_1936_DESC"
+			ideology = fascism
+			ideas = {}
+			focuses = {
+				JAP_publish_the_humanity_declaration
+				JAP_third_sino_japanese_war
+				JAP_massive_warships
+			}
+		}
+		"LOU"={
+			minor = yes
+			history = "LOU_1936_DESC"
+			ideology = neutrality
+			ideas = {}
+			focuses = {}
+		}
+		"MEX"={
+			minor = yes
+			history = "MEX_1936_DESC"
+			ideology = communism
+			ideas = {}
+			focuses = {
+				MEX_allow_parliamentary_opposition
+				MEX_attack_california
+				MEX_mexico_city_military_academy
+			}
+		}
+		"MUG"={
+			minor = yes
+			history = "MUG_1936_DESC"
+			ideology = neutrality
+			ideas = {}
+			focuses = {}
+		}
+		"NAP"={
+			minor = yes
+			history = "NAP_1936_DESC"
+			ideology = fascism
+			ideas = {}
+			focuses = {
+				NAP_pan_italian_ambition
+				NAP_assassinate_the_pope
+				NAP_reinforce_the_national_militias
+			}
+		}
+		"OHI"={
+			minor = yes
+			history = "OHI_1936_DESC"
+			ideology = neutrality
+			ideas = {}
+			focuses = {
+				OHI_cancel_the_1827_agreement
+				OHI_the_new_king
+				OHI_reform_the_ministry_of_war
+			}
+		}
+		"PAP"={
+			minor = yes
+			history = "PAP_1936_DESC"
+			ideology = neutrality
+			ideas = {}
+			focuses = {
+				PAP_the_new_pope
+				PAP_weapons_of_desecration
+				PAP_invite_polish_guest_workers
+			}
+		}
+		"SWE"={
+			minor = yes
+			history = "SWE_1936_DESC"
+			ideology = democratic
+			ideas = {
+				stockholm_crisis
+			}
+			focuses = {
+				SWE_endorse_the_fraus_plan
+				SWE_bring_bjorkquist_to_justice
+				SWE_endorse_the_norwegian_occupation_narrative
+			}
+		}
+		"USA"={
+			minor = yes
+			history = "USA_1936_DESC"
+			ideology = democratic
+			ideas = {
+				racial_segregation
+				economic_crisis4
+			}
+			focuses = {
+				USA_align_with_france
+				USA_oppenheimer_project
+				USA_invite_henry_ford_into_the_government
+			}
+		}
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

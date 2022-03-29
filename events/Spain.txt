@@ -1,0 +1,52 @@
+﻿add_namespace = spain
+
+#Setup Event
+country_event = {
+	id = spain.1
+	title = spain.1.t
+	desc = spain.1.d
+	picture = GFX_report_event_riot
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = spain.1.o1
+	}
+}
+
+#[From.GetName] wants to join the Barcelona Agreement
+country_event = {
+	id = spain.2
+	title = spain.2.t
+	desc = spain.2.d
+	picture = GFX_report_event_conference
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = spain.2.o1
+		add_to_faction = FROM
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = diplomatic_request_accepted
+			}
+		}
+		add_named_threat = {
+			threat = 0.5
+			name = "New Faction Member"
+		}
+		ai_chance = { base = 100 }
+	}
+	
+	option = {
+		name = spain.2.o2
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = diplomatic_request_rejected
+			}
+		}
+		ai_chance = { base = 0 }
+	}
+}

@@ -1,0 +1,16 @@
+﻿add_namespace = sweden
+
+#Setup Event
+country_event = {
+	id = sweden.1
+	title = sweden.1.t
+	desc = sweden.1.d
+	picture = GFX_report_event_reichstag_gathering
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sweden.1.o1
+	}
+}
+

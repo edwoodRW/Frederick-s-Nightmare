@@ -1,0 +1,70 @@
+﻿add_namespace = native_confederation
+
+#Setup Event
+country_event = {
+	id = native_confederation.1
+	title = native_confederation.1.t
+	desc = native_confederation.1.d
+	picture = GFX_report_event_government7
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = native_confederation.2 days = 160 }
+		}
+	}
+	
+	option = {
+		name = native_confederation.1.o1
+	}
+}
+
+#Hakadah resigns
+country_event = {
+	id = native_confederation.2
+	title = native_confederation.2.t
+	desc = native_confederation.2.d
+	picture = GFX_report_event_government7
+	
+	is_triggered_only = yes
+	
+	#Robert Latham Owen
+	#Cherokee
+	option = {
+		name = native_confederation.2.o1
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Robert Latham Owen"
+			picture = "Robert_Latham_Owen.dds"
+			ideology = socialism
+		}
+		ai_chance = { base = 50 }
+	}
+	
+	#Roosevelt Sabattis
+	#Maliseet
+	option = {
+		name = native_confederation.2.o2
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Roosevelt Sabattis"
+			picture = "Roosevelt_Sabattis.dds"
+			ideology = conservatism
+		}
+		ai_chance = { base = 1 }
+	}
+	
+	#Ben Reifel
+	#Sioux
+	option = {
+		name = native_confederation.2.o3
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Ben Reifel"
+			picture = "Ben_Reifel.dds"
+			ideology = moderatism
+		}
+		ai_chance = { base = 49 }
+	}
+}

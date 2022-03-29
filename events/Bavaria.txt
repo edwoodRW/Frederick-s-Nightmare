@@ -1,0 +1,116 @@
+﻿add_namespace = bavaria
+
+#Setup Event
+country_event = {
+	id = bavaria.1
+	title = bavaria.1.t
+	desc = bavaria.1.d
+	picture = GFX_report_event_army_parade
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_list = { 50 = { country_event = { id = bavaria.2 days = 58 } } 50 = { } }
+			random_list = { 50 = { country_event = { id = bavaria.3 days = 97 } } 50 = { } }
+		}
+	}
+	
+	option = {
+		name = bavaria.1.o1
+	}
+}
+
+#King Rupprecht speaks out against communists
+country_event = {
+	id = bavaria.2
+	title = bavaria.2.t
+	desc = bavaria.2.d
+	picture = GFX_report_event_political_speech4
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_government = neutrality
+	}
+	
+	option = {
+		name = bavaria.2.o1
+		add_political_power = -20
+		add_popularity = {
+			ideology = neutrality popularity = 0.02
+		}
+		add_popularity = {
+			ideology = communism popularity = -0.05
+		}
+		
+		ai_chance = { base = 70 }
+	}
+	option = {
+		name = bavaria.2.o2
+		add_popularity = {
+			ideology = communism popularity = -0.02
+		}
+		
+		ai_chance = { base = 30 }
+	}
+}
+
+#Draxler murdered
+country_event = {
+	id = bavaria.3
+	title = bavaria.3.t
+	desc = bavaria.3.d
+	picture = GFX_report_event_funeral2
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			has_government = communism
+			has_government = fascism
+		}
+	}
+	
+	immediate = {
+		hidden_effect = { country_event = { id = bavaria.4 days = 23 } }
+	}
+	
+	option = {
+		name = bavaria.3.o1
+		add_popularity = { ideology = fascism popularity = 0.01 }
+		create_country_leader = {
+			name = "Adolf Hitler"
+			ideology = nazism
+			picture = "Adolf_Hitler.dds"
+		}
+	}
+}
+
+#Beer Hall Rally
+country_event = {
+	id = bavaria.4
+	title = bavaria.4.t
+	desc = bavaria.4.d
+	picture = GFX_report_event_adolf_hitler3
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_government = fascism }
+	}
+	
+	option = {
+		name = bavaria.4.o1
+		add_popularity = { ideology = fascism popularity = 0.04 }
+		
+		ai_chance = { base = 75 }
+	}
+	option = {
+		name = bavaria.4.o2
+		add_popularity = { ideology = fascism popularity = 0.01 }
+		add_political_power = -20
+		
+		ai_chance = { base = 25 }
+	}
+}

@@ -1,0 +1,92 @@
+﻿add_namespace = naples
+
+#Setup Event
+country_event = {
+	id = naples.1
+	title = naples.1.t
+	desc = naples.1.d
+	picture = GFX_report_event_guard_infantry
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naples.1.o1
+	}
+}
+
+#WUR: Compact with Wurttemberg
+country_event = {
+	id = naples.2
+	title = naples.2.t
+	desc = naples.2.d
+	picture = GFX_report_event_guard_infantry
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naples.2.o1
+		add_tech_bonus = { category = armor uses = 1 bonus = 0.5 }
+		NAP = { add_tech_bonus = { category = armor uses = 1 bonus = 0.5 } }
+		add_popularity = { ideology = fascism popularity = 0.02 }
+	}
+	
+	option = {
+		name = naples.2.o2
+		add_popularity = { ideology = fascism popularity = -0.02 }
+	}
+}
+
+#PAP: Papal-Neapolitan Alliance
+country_event = {
+	id = naples.3
+	title = naples.3.t
+	desc = naples.3.d
+	picture = GFX_report_event_guard_infantry
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naples.3.o1
+		if = {
+			limit = { is_faction_leader = yes }
+			add_to_faction = NAP
+		}
+		if = {
+			limit = { is_in_faction = yes }
+			create_faction = papal_league
+			add_to_faction = NAP
+		}
+	}
+	
+	option = {
+		name = naples.3.o2
+		add_political_power = 5
+	}
+}
+
+#PAP: Naples wants its army canonized
+country_event = {
+	id = naples.4
+	title = naples.4.t
+	desc = naples.4.d
+	picture = GFX_report_event_guard_infantry
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = naples.4.o1
+		add_political_power = -25
+		add_popularity = { ideology = neutrality popularity = -0.05 }
+		add_stability = -0.05
+		PAP = {
+			add_ideas = elite_army
+		}
+	}
+	
+	option = {
+		name = naples.4.o2
+		NAP = {
+			add_opinion_modifier = { target = ROOT modifier = diplomatic_insult }
+		}
+	}
+}

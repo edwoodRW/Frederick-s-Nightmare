@@ -1,0 +1,15 @@
+﻿add_namespace = westphalia
+
+#Setup Event
+country_event = {
+	id = westphalia.1
+	title = westphalia.1.t
+	desc = westphalia.1.d
+	picture = GFX_report_event_guard_infantry2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = westphalia.1.o1
+	}
+}
